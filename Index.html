@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Angel Pro Academy | Excellence in Education</title>
+  <!-- Google Fonts & Simple CSS Reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefcf7;
+      color: #1e2a3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container utility */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navbar */
+    header {
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #c4450c, #f39c12);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      color: #6c757d;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3e50;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #e67e22;
+    }
+
+    /* hero section with educational image feel */
+    .hero {
+      background: linear-gradient(107deg, #fff6e8 0%, #ffefdb 100%);
+      padding: 3rem 0 4rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-content h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #b64926;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4a5568;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-hero {
+      background: white;
+      border-radius: 28px;
+      padding: 1rem 1.5rem;
+      display: inline-flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      margin-top: 0.5rem;
+    }
+
+    .contact-hero div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    .contact-hero i {
+      color: #e67e22;
+      font-size: 1.3rem;
+    }
+
+    .hero-img {
+      flex: 0.9;
+      text-align: center;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+    }
+
+    /* sections general */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #f0e9e0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #f39c12;
+      border-radius: 4px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
+      flex: 1 1 260px;
+      transition: all 0.2s ease;
+      border: 1px solid #ffefdb;
+    }
+    .card i {
+      font-size: 2.5rem;
+      color: #e67e22;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.4rem;
+    }
+
+    /* about, contact, pages */
+    .about-text, .contact-flex {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about-text img {
+      max-width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .address-block {
+      background: #fff6e8;
+      padding: 1.5rem;
+      border-radius: 28px;
+      margin-top: 1.2rem;
+    }
+    .contact-details {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .copyright {
+      background: #1e2a3e;
+      color: #ddd;
+      text-align: center;
+      padding: 1.8rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+    .page-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+    }
+    hr {
+      margin: 1rem 0;
+      border: none;
+      height: 1px;
+      background: #f0e2d0;
+    }
+    .btn {
+      display: inline-block;
+      background: #e67e22;
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #b64926;
+    }
+    @media (max-width: 780px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <h1>Angel Pro Academy</h1>
+      <p><i class="fas fa-graduation-cap"></i> Empowering minds, shaping futures</p>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME SECTION (includes hero + core info) -->
+  <section id="home" style="padding-top: 2rem; border-bottom: none;">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h2>Shaping Bright <br>Futures Since 2015</h2>
+          <p>Quality education, individual attention, and career-focused learning at Angel Pro Academy. Your success begins here.</p>
+          <div class="contact-hero">
+            <div><i class="fas fa-phone-alt"></i> +91 8369797314</div>
+            <div><i class="fas fa-envelope"></i> Maheshlake@gmail.com</div>
+            <div><i class="fas fa-map-marker-alt"></i> Bidar - 585401</div>
+          </div>
+        </div>
+        <div class="hero-img">
+          <!-- educational professional image (academy illustration) -->
+          <img src="https://placehold.co/600x400/FFEAD2/CC7B2E?text=Angel+Pro+Academy&font=montserrat" alt="Angel Pro Academy Campus" style="object-fit: cover; width:100%; background:#f6e3cc;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / professional imagery & highlights -->
+  <div class="container">
+    <div class="card-grid" style="margin-top: -2rem; margin-bottom: 1rem;">
+      <div class="card"><i class="fas fa-chalkboard-user"></i><h3>Expert Faculty</h3><p>Certified teachers & industry mentors.</p></div>
+      <div class="card"><i class="fas fa-book-open"></i><h3>Modern Curriculum</h3><p>Updated syllabus & digital learning tools.</p></div>
+      <div class="card"><i class="fas fa-medal"></i><h3>Scholarships</h3><p>Merit & need-based financial aid.</p></div>
+      <div class="card"><i class="fas fa-laptop-code"></i><h3>Smart Classes</h3><p>Tech-enabled classrooms & labs.</p></div>
+    </div>
+  </div>
+
+  <!-- ABOUT Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Angel Pro Academy</h2>
+      <div class="about-text">
+        <div style="flex:1.2">
+          <p style="margin-bottom: 1rem; font-size: 1.05rem;"><strong>Angel Pro Academy</strong> is a premier educational institution committed to academic excellence and holistic development. We nurture young minds with modern teaching methodologies, experienced educators, and a supportive environment.</p>
+          <p style="margin-bottom: 1rem;">Located in the heart of Bidar, we believe in empowering students with knowledge, ethics, and life skills. Our programs range from foundational courses to competitive exam preparation, always focusing on individual growth.</p>
+          <div class="address-block">
+            <i class="fas fa-location-dot" style="color:#e67e22; margin-right: 10px;"></i>
+            <strong>📍 Basavaling Complex 1st Floor, near Domino's Pizza, Shivanagar Hyderabad Nanded road, Bidar - 585401</strong>
+          </div>
+          <p style="margin-top: 1rem;"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM – 7:00 PM</p>
+        </div>
+        <div style="flex:1">
+          <img src="https://placehold.co/500x400/FDF2E4/C46A2E?text=Academy+Classroom+%26+Library&font=montserrat" alt="About academy image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT Section (dedicated) -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-flex">
+        <div style="flex:1">
+          <div class="contact-details">
+            <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+            <hr>
+            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8369797314</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> Maheshlake@gmail.com</p>
+            <p><i class="fas fa-map-pin"></i> <strong>Address:</strong> Basavaling complex 1st floor, near Domino's Pizza, Shivanagar Hyderabad Nanded road, Bidar - 585401</p>
+            <p><i class="fas fa-globe"></i> <strong>Office hours:</strong> 9 AM to 7 PM (Mon-Sat)</p>
+            <div style="margin-top: 1.5rem;">
+              <a href="mailto:Maheshlake@gmail.com" class="btn"><i class="fas fa-paper-plane"></i> Send Email</a>
+              <a href="tel:+918369797314" class="btn" style="background:#b64926; margin-left: 10px;"><i class="fas fa-phone-alt"></i> Call Now</a>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1">
+          <img src="https://placehold.co/500x380/F8EDE0/C6631F?text=Reach+us+%7C+Map+Direction&font=montserrat" alt="contact location map illustration" style="width:100%; border-radius: 28px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY Section -->
+  <section id="privacy">
+    <div class="container">
+      <h2 class="section-title">Privacy Policy</h2>
+      <div class="page-card">
+        <p><strong>Effective Date:</strong> January 1, 2025</p>
+        <p>Angel Pro Academy (“we”, “our”, “the Academy”) values your privacy. This Privacy Policy explains how we collect, use, and protect personal information when you visit our website or communicate with us.</p>
+        <h3 style="margin-top: 1.2rem;">1. Information We Collect</h3>
+        <p>We may collect personal details such as name, email address, phone number, academic records, and any information provided via contact forms, admissions, or email correspondence.</p>
+        <h3>2. Use of Information</h3>
+        <p>Your data helps us to respond to inquiries, process admissions, send notifications about courses/events, and improve our educational services. We do not sell or rent personal data to third parties.</p>
+        <h3>3. Data Security</h3>
+        <p>We implement reasonable security measures to protect your information from unauthorized access, alteration, or disclosure.</p>
+        <h3>4. Cookies</h3>
+        <p>Our website may use cookies to enhance user experience. You can adjust browser settings to refuse cookies.</p>
+        <h3>5. Third-Party Links</h3>
+        <p>Our site may contain links to external sites. We are not responsible for their privacy practices.</p>
+        <h3>6. Contact</h3>
+        <p>For any privacy-related queries, reach us at Maheshlake@gmail.com or call +91 8369797314.</p>
+        <p><i class="fas fa-shield-alt"></i> Last updated: March 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS AND CONDITIONS Section -->
+  <section id="terms">
+    <div class="container">
+      <h2 class="section-title">Terms & Conditions</h2>
+      <div class="page-card">
+        <p>Welcome to Angel Pro Academy website. By accessing or using our site, you agree to comply with and be bound by the following terms.</p>
+        <h3>1. Use of Content</h3>
+        <p>All materials, logos, images, and text on this website are the property of Angel Pro Academy. You may not reproduce, distribute, or exploit any content without written permission.</p>
+        <h3>2. Admissions & Payments</h3>
+        <p>Course fees, schedules, and admission policies are subject to change. Payment once made for registration is non-refundable unless specified otherwise in the refund policy provided during admission.</p>
+        <h3>3. Code of Conduct</h3>
+        <p>Students and parents must abide by academy rules. Any misconduct may lead to disciplinary action, including termination of enrollment.</p>
+        <h3>4. Limitation of Liability</h3>
+        <p>Angel Pro Academy is not liable for any indirect damages arising from the use of our website or services, to the maximum extent permitted by law.</p>
+        <h3>5. Modification of Terms</h3>
+        <p>We reserve the right to update these terms at any time. Continued use of the site constitutes acceptance of the revised terms.</p>
+        <h3>6. Contact Information</h3>
+        <p>For disputes or inquiries: Basavaling complex 1st floor near Domino's Pizza Shivanagar Hyderabad Nanded road Bidar -585401, or email Maheshlake@gmail.com.</p>
+        <p><i class="fas fa-gavel"></i> Last Revision: March 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- extra component: professional imagery / gallery like section -->
+  <div class="container" style="padding-bottom: 3rem;">
+    <h2 class="section-title">Academy Highlights</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 1rem;">
+      <img src="https://placehold.co/300x220/EADBC6/BF5E20?text=Digital+Library&font=montserrat" alt="digital class" style="border-radius: 24px; width:100%; max-width:280px; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+      <img src="https://placehold.co/300x220/F4E5D2/BC591E?text=Science+Lab&font=montserrat" alt="science lab" style="border-radius: 24px; width:100%; max-width:280px; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+      <img src="https://placehold.co/300x220/FCEEDC/C5611F?text=Sports+Ground&font=montserrat" alt="sports" style="border-radius: 24px; width:100%; max-width:280px; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+      <img src="https://placehold.co/300x220/FFEEDD/C9571A?text=Workshop+Event&font=montserrat" alt="workshop" style="border-radius: 24px; width:100%; max-width:280px; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER with copyright & additional links -->
+<footer>
+  <div class="copyright">
+    <div class="container">
+      <p>&copy; 2025 Angel Pro Academy. All Rights Reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a> | <a href="#contact">Contact</a></p>
+      <p style="margin-top: 0.5rem; font-size:0.85rem;"><i class="fas fa-map-marker-alt"></i> Basavaling complex 1st floor near Domino's Pizza Shivanagar Hyderabad Nanded road Bidar -585401 | 📞 +91 8369797314 | ✉️ Maheshlake@gmail.com</p>
+      <p style="margin-top: 0.6rem;">Designed with <i class="fas fa-heart" style="color:#e67e22;"></i> for educational excellence</p>
+    </div>
+  </div>
+</footer>
+
+<!-- simple back-to-top button behavior -->
+<script>
+  // smooth scroll for anchor links (improves navigation)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#" || targetId === "") return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
